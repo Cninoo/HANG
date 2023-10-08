@@ -15,7 +15,8 @@ func maskTheWord(word string, revealCount int) string {
 	}
 	return result
 }
- // Fonction pour afficher les mots à partir d'un fichier
+
+// Fonction pour afficher les mots à partir d'un fichier
 func displaysWordsFromFile(filename string) ([]string, error) {
 	f, err := os.Open(filename)
 	if err != nil {
@@ -35,9 +36,24 @@ func displaysWordsFromFile(filename string) ([]string, error) {
 
 	return words, nil
 }
+
 // Fonction pour choisir un mot au hasard à partir d'une liste de mots
 func selectRandomWord(words []string) string {
 	rand.Seed(time.Now().UnixNano())
 	index := rand.Intn(len(words))
 	return strings.ToUpper(words[index])
+}
+
+// Fonction pour afficher le mot caché avec les lettres devinées
+func displayWord(word string, guessedLetters map[rune]bool) string {
+	displayedWord := ""
+	for _, char := range word {
+		if guessedLetters[char] {
+			displayedWord += string(char)
+		} else {
+			displayedWord += "_"
+		}
+		displayedWord += " "
+	}
+	return displayedWord
 }
