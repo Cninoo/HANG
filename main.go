@@ -7,12 +7,49 @@ import (
 	"os"
 	"strings"
 	"time"
+<<<<<<< HEAD
 	"hangman/Jose"
+=======
+>>>>>>> d6bd35e (Mise à jour)
 )
 
 // Constante pour le nombre total de tentatives
 const theTotalNumberOfAttempts = 10
 
+<<<<<<< HEAD
+=======
+func Jose(numberOfAttemps int) { //fonction qui affiche la position du pendu par rapport au nombre de vie restante
+	var arrayJose []byte
+	initNumberOfLife := 10
+	pos := initNumberOfLife - numberOfAttemps
+	content, err := os.ReadFile("hangman.txt")
+	raid := 1
+	fr := 1
+	if err != nil {
+		fmt.Println("[fichier non trouvé]")
+	} else {
+		for i := 0; i < len(content); i++ {
+			if content[i] == 10 {
+				raid++
+			}
+			if raid != 8 {
+				arrayJose = append(arrayJose, content[i])
+			}
+			if raid == 8 && pos != fr {
+				arrayJose = []byte{}
+				raid = 1
+				fr++
+			}
+			if raid == 8 && pos == fr {
+				josé := (string(arrayJose))
+				fmt.Println(josé)
+				break
+			}
+		}
+	}
+}
+
+>>>>>>> d6bd35e (Mise à jour)
 // Fonction pour masquer une partie du mot
 func maskTheWord(word string, revealCount int) string {
 	result := ""
@@ -32,18 +69,28 @@ func displaysWordsFromFile(filename string) ([]string, error) {
 	if err != nil {             // Si erreur dans l'ouverture du fichier
 		return nil, err
 	}
+<<<<<<< HEAD
 	defer f.Close() // Gère la fermeture du fichier
 
+=======
+	defer f.Close()                // Gère la fermeture du fichier
+>>>>>>> d6bd35e (Mise à jour)
 	var words []string             // Liste de mots du fichier
 	scanner := bufio.NewScanner(f) // Lit le fichier ligne par ligne
 	for scanner.Scan() {
 		words = append(words, scanner.Text()) // Ajout des mots dans la liste ci-dessus
 	}
+<<<<<<< HEAD
 
 	if err := scanner.Err(); err != nil { // Gestion d'erreurs
 		return nil, err
 	}
 
+=======
+	if err := scanner.Err(); err != nil { // Gestion d'erreurs
+		return nil, err
+	}
+>>>>>>> d6bd35e (Mise à jour)
 	return words, nil
 }
 
@@ -95,7 +142,6 @@ func main() {
 		fmt.Print("Enter any letter: ")
 		var guess string
 		fmt.Scanln(&guess)
-
 		guessedLetter := rune(strings.ToUpper(guess)[0])
 		found := false
 		for _, char := range randomWord {
@@ -104,7 +150,6 @@ func main() {
 				found = true
 			}
 		}
-
 		if !found {
 			fmt.Println("The letter", string(guessedLetter), "is not present in the word..")
 			numberOfRemainingAttempts--
@@ -121,13 +166,11 @@ func main() {
 				break
 			}
 		}
-
 		// fin du jeu
 		if wordFound {
 			fmt.Println("Congratulations, you found the word!")
 			return
 		}
 	}
-
 	fmt.Println("Sorry, you have no more attempts. The word was:", randomWord)
 }
