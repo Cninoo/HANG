@@ -9,16 +9,16 @@ import (
 const theTotalNumberOfAttempts = 10
 
 func main() {
-	words, err := functions.DisplaysWordsFromFile("words.txt")
+	words, err := functions.displaysWordsFromFile("words.txt")
 
 	if err != nil {
 		fmt.Println("Impossible to read the file:", err)
 		return
 	}
 
-	randomWord := functions.SelectRandomWord(words)              // choice of a random word
-	revealCount := 1                                             // number of revealed letters
-	hiddenWord := functions.MaskTheWord(randomWord, revealCount) // initial hidden word
+	randomWord := functions.selectRandomWord(words)              // choice of a random word
+	revealCount := 1                                         // number of revealed letters
+	hiddenWord := functions.maskTheWord(randomWord, revealCount) // initial hidden word
 
 	fmt.Println("Word to find:", hiddenWord)
 
@@ -48,7 +48,7 @@ func main() {
 		if !found {
 			fmt.Println("The letter", string(guessedLetter), "is not present in the word..")
 			numberOfRemainingAttempts--
-			functions.Jose(numberOfRemainingAttempts)
+			functions.functions(numberOfRemainingAttempts)
 		}
 
 		fmt.Println("Be careful! The remaining number of attempts is:", numberOfRemainingAttempts)

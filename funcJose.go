@@ -1,9 +1,11 @@
-package Jose
+package functions
 
 import (
 	"fmt"
 	"os"
 )
+
+const theTotalNumberOfAttempts = 10
 
 func Jose(numberOfAttemps int) { //fonction qui affiche la position du pendu par rapport au nombre de vie restante
 	var arrayJose []byte
@@ -28,8 +30,8 @@ func Jose(numberOfAttemps int) { //fonction qui affiche la position du pendu par
 				fr++
 			}
 			if raid == 8 && pos == fr {
-				josé := (string(arrayJose))
-				fmt.Println(josé)
+				jose := (string(arrayJose))
+				fmt.Println(jose)
 				break
 			}
 		}
