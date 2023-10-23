@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"functions"
 	"strings"
+	"functions"
 )
 
 const theTotalNumberOfAttempts = 10
@@ -17,7 +17,7 @@ func main() {
 	}
 
 	randomWord := functions.selectRandomWord(words)              // choice of a random word
-	revealCount := 1                                         // number of revealed letters
+	revealCount := 1                                             // number of revealed letters
 	hiddenWord := functions.maskTheWord(randomWord, revealCount) // initial hidden word
 
 	fmt.Println("Word to find:", hiddenWord)
