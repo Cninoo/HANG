@@ -71,3 +71,4 @@ func main() {
 
 	fmt.Println("Sorry, you have no more attempts. The word was:", randomWord)
 }
+
