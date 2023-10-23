@@ -28,7 +28,7 @@ func main() {
 	// beginning of the game
 
 	fmt.Println("Welcome to the game of Hangman!")
-	fmt.Println("The word you need to guess is composed of", len(randomWord), "lettres.")
+	fmt.Println("The word you need to guess is composed of", len(randomWord), "letters.")
 	fmt.Println("Be careful! The number of remaining attempts is:", numberOfRemainingAttempts)
 
 	for numberOfRemainingAttempts > 0 {
