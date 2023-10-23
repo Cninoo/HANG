@@ -48,7 +48,7 @@ func main() {
 		if !found {
 			fmt.Println("The letter", string(guessedLetter), "is not present in the word..")
 			numberOfRemainingAttempts--
-			functions.functions(numberOfRemainingAttempts)
+			functions.Jose(numberOfRemainingAttempts)
 		}
 
 		fmt.Println("Be careful! The remaining number of attempts is:", numberOfRemainingAttempts)
