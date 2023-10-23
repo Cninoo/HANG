@@ -2,23 +2,23 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"functions"
+	"strings"
 )
 
 const theTotalNumberOfAttempts = 10
 
 func main() {
-	words, err := functions.displaysWordsFromFile("words.txt")
+	words, err := functions.DisplaysWordsFromFile("words.txt")
 
 	if err != nil {
 		fmt.Println("Impossible to read the file:", err)
 		return
 	}
 
-	randomWord := functions.selectRandomWord(words)              // choice of a random word
+	randomWord := functions.SelectRandomWord(words)              // choice of a random word
 	revealCount := 1                                             // number of revealed letters
-	hiddenWord := functions.maskTheWord(randomWord, revealCount) // initial hidden word
+	hiddenWord := functions.MaskTheWord(randomWord, revealCount) // initial hidden word
 
 	fmt.Println("Word to find:", hiddenWord)
 

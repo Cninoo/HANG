@@ -1,6 +1,6 @@
 package functions
 
-func maskTheWord(word string, revealCount int) string {
+func MaskTheWord(word string, revealCount int) string {
 	result := ""
 	for i := 0; i < len(word); i++ { // browse the length of the word
 		if i < revealCount { // if i is lower than revealCount he must print a caracter

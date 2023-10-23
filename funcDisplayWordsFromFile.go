@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func displaysWordsFromFile(filename string) ([]string, error) {
+func DisplaysWordsFromFile(filename string) ([]string, error) {
 	f, err := os.Open(filename) // Ouvre le fichier que l'on souhaite
 	if err != nil {             // Si erreur dans l'ouverture du fichier
 		return nil, err

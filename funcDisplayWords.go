@@ -1,6 +1,6 @@
 package functions
 
-func displayWord(word string, guessedLetters map[rune]bool) string {
+func DisplayWord(word string, guessedLetters map[rune]bool) string {
 	displayedWord := ""
 	for _, char := range word { // browse the word to guess
 		if guessedLetters[char] {
